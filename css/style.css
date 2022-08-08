@@ -25,10 +25,9 @@ body header a img {
   padding: 24px;
 }
 
-
-
-
-
+.py-5{
+  padding-top: 1rem!important;
+}
 
 h2{
   border-left: 100px;
