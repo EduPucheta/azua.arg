@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Azua</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href=".\assets\logo_azua.png" />
@@ -13,22 +14,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-    <header class="navYfooter">
-        <a href="index.html">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
             <img src="assets\logo_azua.png" alt="Ícono de instagram" />
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#Productos">Productos</a></li>
-                <li><a href="#Contacto">Contaco</a></li>
-                <li><a href="#newsletter">Suscribite al newsletter</a></li>
-                <li><a href="./pages/formulario.html">Hacé tu pedido</a></li>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item nav-hover nav-hover">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item nav-hover">
+                <a class="nav-link active" aria-current="page"href="#Productos">Productos</a>
+              </li>
+              <li class="nav-item nav-hover">
+                <a class="nav-link active" aria-current="page" href="#newsletter">Suscribite al newsletter</a>
+              </li>
+              <li class="nav-item nav-hover">
+                <a class="nav-link active" aria-current="page"  href="./pages/formulario.html">Hacé tu pedido</a>
+              </li>
             </ul>
-        </nav>
-    </header>
+          </div>
+        </div>
+      </nav>
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="assets\foto-eq.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">Stands para notebooks de calidad</h1>
+            <p class="lead"> Es un complemento que siempre debería existir en tu zona de trabajo, si querés que ésta sea realmente productiva!</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 bttn" href="./pages/formulario.html">Pedilo ahora</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
     <h2>Conocé nuestros diferentes modelos</h2>
     <div>
         <section id="Productos" class="Productos" data-aos="fade-up">
@@ -42,7 +69,7 @@
                 emprendedores!!!!
             </p>
             <img class="contenidoIndex" src="assets\foto-eq.jpg" alt="Foto del stand" height="300" width="300" />
-            <a class="button" href="\pages\formulario.html">Hacé tu pedido</a>
+            <a class="bttn" href="\pages\formulario.html">Hacé tu pedido</a>
         </section>
         <section class="Productos" data-aos="fade-up">
             <p>Modelo Curv</p>
@@ -55,7 +82,7 @@
                 emprendedores!!!!
             </p>
             <img class="contenidoIndex" src="assets\foto-mov.jpg" alt="Foto del stand" />
-            <a class="button" href="\pages\formulario.html">Hacé tu pedido</a>
+            <a class="bttn" href="\pages\formulario.html">Hacé tu pedido</a>
         </section>
         <section class="Productos" class="animate__animated animate__bounce" data-aos="fade-up">
             <p>Modelo Iso</p>
@@ -68,7 +95,7 @@
                 emprendedores!!!!
             </p>
             <img class="contenidoIndex" src="assets\foto-iso.jpg" alt="Foto del stand" />
-            <a class="button" href="\pages\formulario.html">Hacé tu pedido</a>
+            <a class="bttn" href="\pages\formulario.html">Hacé tu pedido</a>
         </section>
         <section class="Productos" class="animate__animated animate__bounce" data-aos="fade-up">
             <p>Modelo Mov</p>
@@ -81,7 +108,7 @@
                 emprendedores!!!!
             </p>
             <img class="contenidoIndex" src="assets\foto-mov.jpg" alt="Foto del stand" />
-            <a class="button" href="\pages\formulario.html">Hacé tu pedido</a>
+            <a class="bttn" href="\pages\formulario.html">Hacé tu pedido</a>
         </section>
     </div>
     <h2>Donde encontrarnos</h2>
@@ -102,8 +129,9 @@
         <label class="newletter_label" id="newsletter" for="fname">Dejanos tu mail y suscibite a nuestro
             newsletter!</label>
         <input class="newletter_input" type="email" id="fname" name="fname" />
-        <input type="submit" class="button button__newsletter" value="Suscribirse" />
+        <input type="submit" class="bttn button__newsletter" value="Suscribirse" />
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();

@@ -16,10 +16,8 @@ body header a img {
   width: 120px;
 }
 
-nav {
-  position: relative;
-  bottom: 70px;
-  left: 150px;
+.nav-hover:hover{
+  color: #e74c3c;
 }
 
 .navYfooter {
@@ -27,30 +25,10 @@ nav {
   padding: 24px;
 }
 
-ul {
-  font-size: 25px;
-  list-style: none;
-  display: flex;
-}
 
-/*La siguiente media query es para que las opciones del menu
-de navegación se muestren en columna en mobile*/
-@media screen and (max-width: 768px) {
-  ul {
-  display: block;
-  }
-}
 
-ul li a {
-  text-decoration: none;
-  color: beige;
-  margin: 12px;
-  transition: 0.3s ease;
-}
 
-nav ul li a:hover {
-  color: #e74c3c;
-}
+
 
 h2{
   border-left: 100px;
@@ -61,7 +39,6 @@ body div {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-  padding: 30px;
 }
 
 body div section {
@@ -109,7 +86,7 @@ body div {
   overflow: hidden;
 }
 
-form {
+.form {
   max-width: 500px;
   margin: 2rem auto;
   padding: 2rem;
@@ -135,7 +112,7 @@ select {
   transition: 0.3s ease;
 }
 
-.button {
+.bttn {
   display: block;
   background: #343050;
   width: 75%;
@@ -149,7 +126,7 @@ select {
   border-radius: 5px;
 }
 
-.button:hover {
+.bttn:hover {
   background: #e74c3c;
 }
 
