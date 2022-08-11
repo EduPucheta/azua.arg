@@ -6,40 +6,20 @@
 body {
   font-weight: normal;
   font-style: normal;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-image: url(/assets/memphis-mini.png);
 }
-
 body header a img {
   margin: 5px;
   height: 70px;
   width: 120px;
 }
-
-.nav-hover:hover{
-  color: #e74c3c;
-}
-
-.navYfooter {
-  background-color: #5b585fff;
-  padding: 24px;
-}
-
-.py-5{
-  padding-top: 1.5rem!important;
-}
-
-h2{
-  border-left: 100px;
-}
-
 body div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
 }
-
 body div section {
   margin: 30px;
   background-color: #cccccc;
@@ -51,21 +31,63 @@ body div section {
   justify-content: space-evenly;
 }
 
+.dark-color {
+  background-color: #343050;
+}
+
+.nav-link2 {
+  color: white;
+}
+.nav-link2:hover {
+  color: #eb5140;
+  transition: 0.4s;
+}
+
+.bttn-color {
+  background-color: #343050;
+  border: none;
+}
+.bttn-color:hover {
+  color: #eb5140;
+  background-color: #343050;
+  transition: 0.4s;
+}
+
+.navYfooter {
+  background-color: #5b585f;
+  padding: 24px;
+}
+
+.py-5 {
+  padding-top: 1.5rem !important;
+}
+
+h2 {
+  border-left: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.Productos {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Productos .Productos__child {
+  margin: 20px;
+}
+
 p {
   text-align: center;
 }
 
-body div {
-  border: #343050;
-
-}
-
 .Contacto {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 40px;
+  margin: 10px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Contacto iframe {
+  width: 100%;
 }
 
 .contenidoIndex {
@@ -108,7 +130,7 @@ select {
   padding: 0.5rem;
   font-size: 18px;
   border-radius: 5px;
-  transition: 0.3s ease;
+  transition: 0.4s ease;
 }
 
 .bttn {
@@ -119,13 +141,12 @@ select {
   padding: 0.5rem;
   margin: 10px auto auto auto;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.4s;
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
 }
-
-.bttn:hover {
+.bttnhover {
   background: #e74c3c;
 }
 
@@ -134,50 +155,52 @@ select {
 }
 
 /*La siguiente media query es para que la grilla solo se aplique en desktop
-y para que se muestren los elementos en una sola columna en mobile*/
-
+  y para que se muestren los elementos en una sola columna en mobile*/
 @media screen and (min-width: 768px) {
-.grilla {
-  display: grid;  
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 60px 25px 40px;
-  grid-row-gap: 15px;
-    grid-template-areas:
-    "whatsapp instagram facebook"
-    "newletter_label newletter_label button__newsletter"
-    "newletter_input newletter_input button__newsletter"
-   }
+  .grilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px 25px 40px;
+    grid-row-gap: 15px;
+    grid-template-areas: "whatsapp instagram facebook" "newletter_label newletter_label button__newsletter" "newletter_input newletter_input button__newsletter";
   }
-
+}
 .whatsapp {
-    grid-area: whatsapp;
- }
+  grid-area: whatsapp;
+}
+
 .instagram {
-    grid-area: instagram;
- }
+  grid-area: instagram;
+}
+
 .facebook {
-    grid-area: facebook;     
- }
+  grid-area: facebook;
+}
+
 .newletter_label {
-    grid-area: newletter_label;     
- }
+  grid-area: newletter_label;
+}
+
 .newletter_input {
-    grid-area: newletter_input;
- }
+  grid-area: newletter_input;
+}
+
 .button__newsletter {
   grid-area: button__newsletter;
 }
 
-.Footer__socialMedia{
+.Footer__socialMedia {
   display: flex;
   justify-content: center;
 }
 
-.navYfooter .newletter_label{
+.navYfooter .newletter_label {
   color: white;
 }
 
-.navYfooter .button__newsletter{
-  font-size:medium;
+.navYfooter .button__newsletter {
+  font-size: medium;
   margin-top: 40px;
 }
+
+/*# sourceMappingURL=style.css.map */
