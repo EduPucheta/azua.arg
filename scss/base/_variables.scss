@@ -1,3 +1,20 @@
-$botones: #343050; 
-$colorhovers:  #eb5140;
+$botones:  #2a9d8fff; 
+$colorhovers:  #e9c46aff;
 $hover_trasition_Speed: 0.4s;
+$navegacion: #264653ff;
+$titulos: white;
+$titulo-hero :black;
+$hero-background: rgb(241, 241, 241);
+
+@mixin flex($direction){
+    display: flex;
+    flex-direction: $direction;
+}
+
+
+
+$charcoal: #264653ff;
+$persian-green: #2a9d8fff;
+$maize-crayola: #e9c46aff;
+$sandy-brown: #f4a261ff;
+$burnt-sienna: #e76f51ff;

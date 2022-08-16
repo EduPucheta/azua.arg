@@ -1,45 +1,3 @@
-.hero__container {
-  background-color: none;
-  color: none;
-}
-
-.hero__imagen__contenedor {
-  border: none;
-  padding: 60px;
-}
-
-.hero__imagen {
-  width: 350px;
-  height: 350px;
-}
-
-.form {
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 5px;
-}
-
-.form__label {
-  color: white;
-  font-weight: bolder;
-  display: block;
-  padding: 1rem 0 0.25rem;
-  font-size: 14px;
-}
-
-input,
-textarea,
-select {
-  display: block;
-  width: 100%;
-  border: 2px solid #343050;
-  padding: 0.5rem;
-  font-size: 18px;
-  border-radius: 5px;
-  transition: 0.4s ease;
-}
-
 /* 
 npm init
 sass --watch scss/style.scss css/style.css 
@@ -56,31 +14,66 @@ body {
   background-color: #4158d0;
   background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
 }
+body div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+body div section {
+  margin: 30px;
+  background-color: #cccccc;
+  width: 500px;
+  height: 500px;
+  border-style: groove;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hero__container2 {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  border: none;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+.hero__imagen__contenedor {
+  border: none;
+  padding: 60px;
+}
+
+.hero__imagen {
+  width: 350px;
+  height: 350px;
+}
 
 .dark-color {
-  background-color: #264653;
+  background-color: #003c8f;
 }
 
 .nav-link2 {
   color: white;
 }
 .nav-link2:hover {
-  color: #e9c46a;
+  color: #eb5140;
   transition: 0.4s;
 }
 
 .bttn-color {
-  background-color: #2a9d8f;
+  background-color: #1565c0;
   border: none;
 }
 .bttn-color:hover {
-  color: #e9c46a;
-  background-color: #2a9d8f;
+  color: #eb5140;
+  background-color: #1565c0;
   transition: 0.4s;
 }
 
 .navYfooter {
-  background-color: #264653;
+  background-color: #003c8f;
   padding: 24px;
 }
 
@@ -91,6 +84,10 @@ body {
 .container div,
 .my-5 div {
   color: black;
+}
+
+.py-5 {
+  padding-top: 1.5rem !important;
 }
 
 h1,
@@ -105,17 +102,15 @@ h2 {
 
 .Productos {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
 }
 .Productos .Productos__child {
   margin: 20px;
   width: 100%;
 }
-.Productos p {
+
+p {
   text-align: center;
 }
 
@@ -147,10 +142,35 @@ h2 {
   overflow: hidden;
 }
 
-/*la idea de este css es para implementar generico a todos los botones*/
+.form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.form__label {
+  display: block;
+  padding: 1rem 0 0.25rem;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  border: 2px solid #343050;
+  padding: 0.5rem;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+
 .bttn {
   display: block;
-  background: #2a9d8f;
+  background: red;
   width: 75%;
   color: white;
   padding: 0.5rem;
@@ -173,10 +193,10 @@ h2 {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 60px 25px 40px;
     grid-row-gap: 15px;
-    grid-template-areas: "Footer__social Footer__social Footer__social" "newsletter_label newsletter_label button__newsletter" "newletter_input newletter_input button__newsletter";
+    grid-template-areas: "Footer__social Footer__social Footer__social" "newletter_label newletter_label button__newsletter" "newletter_input newletter_input button__newsletter";
   }
   .grilla .newletter_label {
-    grid-area: newsletter_label;
+    grid-area: newletter_label;
   }
   .grilla .newletter_input {
     grid-area: newletter_input;
@@ -186,16 +206,11 @@ h2 {
   }
   .grilla .Footer__social {
     grid-area: Footer__social;
+    display: flex;
+    flex-direction: row;
   }
 }
-/* para espacear lo iconos de social*/
-.Footer__social {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
-.navYfooter .newsletter_label {
+.navYfooter .newletter_label {
   color: white;
 }
 .navYfooter .button__newsletter {
@@ -203,4 +218,4 @@ h2 {
   margin-top: 40px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styl.map */

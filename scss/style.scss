@@ -1,8 +1,13 @@
 @import "./base/variables";
 @import "./base/listas";
 @import "./base/maps";
+@import "./parciales/hero.scss";
+@import "./parciales/formulario.scss";
 
-
+/* 
+npm init
+sass --watch scss/style.scss css/style.css 
+*/
 
 * {
   margin: 0;
@@ -14,94 +19,89 @@ body {
   font-style: normal;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-image: url(/assets/memphis-mini.png);
-  header {
-    a {
-      img {
-        margin: 5px;
-        height: 70px;
-        width: 120px;
-      }
-    }
-  }
-  div {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    section {
-      margin: 30px;
-      background-color: #cccccc;
-      width: 500px;
-      height: 500px;
-      border-style: groove;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-    }
-  }
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
 }
 
-.dark-color{
-    background-color: $botones;
+
+
+.dark-color {
+  background-color: $navegacion;
 }
 
-.nav-link2{
-    color: white;
-  &:hover{
+.nav-link2 {
+  color: white;
+  &:hover {
     color: $colorhovers;
     transition: $hover_trasition_Speed;
   }
 }
 
-.bttn-color{
+.bttn-color {
+  background-color: $botones;
+  border: none;
+  &:hover {
+    color: $colorhovers;
     background-color: $botones;
-    border: none;
-    &:hover{
-        color: $colorhovers;
-        background-color: $botones;
-        transition: $hover_trasition_Speed;
-    }
+    transition: $hover_trasition_Speed;
+  }
 }
 
 .navYfooter {
-  background-color: #5b585fff;
+  background-color: $navegacion;
   padding: 24px;
 }
 
-.py-5 {
-  padding-top: 1.5rem !important;
+.container,
+.my-5 {
+  background-color: $hero-background;
+  div {
+    color: black;
+  }
+}
+
+h1,
+.subtitulo {
+  color: $titulo-hero; 
 }
 
 h2 {
-  border-left: 100px;
-  display: flex;
-  justify-content: center;
-}
-
-.Productos{
-    display: flex;
-    flex-wrap: wrap;
-    .Productos__child{
-        margin: 20px;
-    }
-}
-
-
-p {
   text-align: center;
+  color: white;
 }
+
+.Productos {
+  @include flex(row);
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  .Productos__child {
+    margin: 20px;
+    width: 100%;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+
 
 .Contacto {
   margin: 10px;
-  width: 90%; 
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
-  iframe{
+  max-width: 850px;
+  iframe {
     width: 100%;
-  } 
+  }
 }
-
 
 .contenidoIndex {
   margin-left: auto;
@@ -120,35 +120,13 @@ p {
   overflow: hidden;
 }
 
-.form {
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 5px;
-}
 
-.form__label {
-  display: block;
-  padding: 1rem 0 0.25rem;
-  text-transform: uppercase;
-  font-size: 14px;
-}
 
-input,
-textarea,
-select {
-  display: block;
-  width: 100%;
-  border: 2px solid #343050;
-  padding: 0.5rem;
-  font-size: 18px;
-  border-radius: 5px;
-  transition: $hover_trasition_Speed ease;
-}
 
+/*la idea de este css es para implementar generico a todos los botones*/
 .bttn {
   display: block;
-  background: #343050;
+  background: $botones;
   width: 75%;
   color: white;
   padding: 0.5rem;
@@ -158,13 +136,9 @@ select {
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
-  &hover{
+  &hover {
     background: #e74c3c;
   }
-}
-
-.Footer__socialMedia {
-  size: 20px;
 }
 
 /*La siguiente media query es para que la grilla solo se aplique en desktop
@@ -177,41 +151,40 @@ select {
     grid-template-rows: 60px 25px 40px;
     grid-row-gap: 15px;
     grid-template-areas:
-      "whatsapp instagram facebook"
-      "newletter_label newletter_label button__newsletter"
+      "Footer__social Footer__social Footer__social"
+      "newsletter_label newsletter_label button__newsletter"
       "newletter_input newletter_input button__newsletter";
+
+    .newletter_label {
+      grid-area: newsletter_label;
+    }
+    .newletter_input {
+      grid-area: newletter_input;
+    }
+    .button__newsletter {
+      grid-area: button__newsletter;
+    }
+    .Footer__social {
+      grid-area: Footer__social;
+
+    }
   }
 }
 
-.whatsapp {
-  grid-area: whatsapp;
-}
-.instagram {
-  grid-area: instagram;
-}
-.facebook {
-  grid-area: facebook;
-}
-.newletter_label {
-  grid-area: newletter_label;
-}
-.newletter_input {
-  grid-area: newletter_input;
-}
-.button__newsletter {
-  grid-area: button__newsletter;
-}
-
-.Footer__socialMedia {
+/* para espacear lo iconos de social*/
+.Footer__social{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
-.navYfooter .newletter_label {
-  color: white;
+.navYfooter {
+  .newsletter_label {
+    color: white;
+  }
+  .button__newsletter {
+    font-size: medium;
+    margin-top: 40px;
+  }
 }
 
-.navYfooter .button__newsletter {
-  font-size: medium;
-  margin-top: 40px;
-}
