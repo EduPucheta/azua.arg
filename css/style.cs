@@ -1,4 +1,12 @@
-/* Este es un mapa*/
+/*Este es un extend*/
+.Footer__social {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+/*Este es hace lo mismo que el extend pero con mixin*/
+/* Este es un mapa para los botones*/
 .hero__container {
   background-color: none;
   color: none;
@@ -193,13 +201,7 @@ h2 {
     grid-area: Footer__social;
   }
 }
-/* para espacear lo iconos de social*/
-.Footer__social {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
+/* para espacear lo iconos de social (solo se usa ahi)*/
 .navYfooter .newsletter_label {
   color: white;
 }
@@ -208,4 +210,4 @@ h2 {
   margin-top: 40px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.cs.map */

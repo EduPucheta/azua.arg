@@ -6,15 +6,34 @@ $titulos: white;
 $titulo-hero :black;
 $hero-background: rgb(241, 241, 241);
 
-@mixin flex($direction){
-    display: flex;
-    flex-direction: $direction;
-}
-
-
 
 $charcoal: #264653ff;
 $persian-green: #2a9d8fff;
 $maize-crayola: #e9c46aff;
 $sandy-brown: #f4a261ff;
 $burnt-sienna: #e76f51ff;
+
+
+/*Este es un extend*/
+%disposicion {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+/*Este es hace lo mismo que el extend pero con mixin*/
+@mixin flex($direction){
+    display: flex;
+    flex-direction: $direction;
+}
+
+
+/* Este es un mapa para los botones*/
+
+
+$mapbotones:(
+    padding: 0.5rem,
+    margin: 10px auto auto auto,
+)
+
+
