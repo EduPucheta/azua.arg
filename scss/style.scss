@@ -8,12 +8,12 @@ npm init
 sass --watch scss/style.scss css/style.css 
 */
 
-
 * {
   margin: 0;
   padding: 0;
 }
 
+/* Acá se forma el background*/
 body {
   font-weight: normal;
   font-style: normal;
@@ -28,27 +28,27 @@ body {
   );
 }
 
-
-
 .dark-color {
   background-color: $navegacion;
 }
 
-.nav-link2 {
-  color: white;
-  &:hover {
-    color: $colorhovers;
-    transition: $hover_trasition_Speed;
+nav {
+  .nav-link2 {
+    color: $colorsnav;
+    &:hover {
+      color: $colorhovers;
+      transition: $hover_trasition_Speed;
+    }
   }
-}
 
-.bttn-color {
-  background-color: $botones;
-  border: none;
-  &:hover {
-    color: $colorhovers;
+  .bttn-color {
     background-color: $botones;
-    transition: $hover_trasition_Speed;
+    border: none;
+    &:hover {
+      color: $colorhovers;
+      background-color: $botones;
+      transition: $hover_trasition_Speed;
+    }
   }
 }
 
@@ -57,40 +57,65 @@ body {
   padding: 24px;
 }
 
-.container,
-.my-5 {
-  background-color: $hero-background;
-  div {
-    color: black;
+.hero {
+  box-shadow: $shadow;
+  background-color: $charcoal;
+  margin: 20px;
+  color: $titulo-hero;
+  h1,
+  p {
+    margin: 15px;
   }
-}
-
-h1,
-.subtitulo {
-  color: $titulo-hero; 
+  a {
+    margin-left: 30px;
+  }
+  img {
+    height: 250px;
+    width: 250px;
+    margin: 40px;
+  }
+  @media (min-width: $breakpoint-tablet) {
+    height: 500px;
+    @include flex(row);
+    justify-content: space-evenly;
+    padding: 50px;
+    .hero__text{
+      width: 800px;
+      h1,
+      p {
+        margin: 40px;
+      }
+    }
+    img {
+      height: 400px;
+      width: 400px;
+    }
+  }
 }
 
 h2 {
   text-align: center;
   color: white;
+
+}
+
+.h2__index{
+margin-top: 60px;
 }
 
 .Productos {
+  margin: 50px;
   @include flex(row);
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   text-align: center;
   .Productos__child {
+    box-shadow: $shadow;
     margin: 20px;
     width: 100%;
   }
-  p {
-    text-align: center;
-  }
 }
-
-
 
 .Contacto {
   margin: 10px;
@@ -120,69 +145,83 @@ h2 {
   overflow: hidden;
 }
 
-
-
-
-/*la idea de este css es para implementar generico a todos los botones*/
+/*la idea de este css es para implementar generico a todos los botones */
 .bttn {
   display: block;
   background: $botones;
   width: 75%;
-  color: white;
-  padding: map-get($map: $mapbotones, $key: padding);
-  margin: map-get($map: $mapbotones, $key: margin);
+  color: $botonestext;
+  padding: 0.5rem;
+  margin: 10px auto auto auto;
   cursor: pointer;
   transition: $hover_trasition_Speed;
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
-  &hover {
-    background: #e74c3c;
+  border: 0px;
+  &:hover {
+    transition: 0.4s;
+    background-color: $burnt-sienna;
   }
-}
-
-/*La siguiente media query es para que la grilla solo se aplique en desktop
-  y para que se muestren los elementos en una sola columna en mobile*/
-
-@media screen and (min-width: 768px) {
-  .grilla {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 60px 25px 40px;
-    grid-row-gap: 15px;
-    grid-template-areas:
-      "Footer__social Footer__social Footer__social"
-      "newsletter_label newsletter_label button__newsletter"
-      "newletter_input newletter_input button__newsletter";
-
-    .newletter_label {
-      grid-area: newsletter_label;
-    }
-    .newletter_input {
-      grid-area: newletter_input;
-    }
-    .button__newsletter {
-      grid-area: button__newsletter;
-    }
-    .Footer__social {
-      grid-area: Footer__social;
-
+  a {
+    text-decoration: none;
+    border: none;
+    transition: $hover_trasition_Speed;
+    color: $botonestext;
+    &:hover {
+      transition: 0.4s;
+      background-color: $burnt-sienna;
     }
   }
 }
 
 /* para espacear lo iconos de social (solo se usa ahi)*/
-.Footer__social{
-@extend %disposicion
+.Footer__social {
+  @extend %disposicion;
+  max-width: 800px;
+  margin: auto;
 }
 
-.navYfooter {
+.encontrarnos {
+  margin: auto;
+  max-width: 800px;
+  padding: 10px;
+  p {
+    color: $titulos;
+  }
+  iframe {
+    box-shadow: $shadow;
+  }
+}
+
+.newsletter {
+  margin: auto;
+  max-width: 800px;
+  padding: 10px;
+  p {
+    color: $titulos;
+  }
   .newsletter_label {
-    color: white;
+    color: $titulos;
   }
-  .button__newsletter {
-    font-size: medium;
-    margin-top: 40px;
+  .bttn {
+    max-width: 200px;
+    border: none;
+
+  }
+  @media (min-width: $breakpoint-tablet) {
+    .newsletter_suscripcion {
+      @include flex(row);
+      justify-content: space-between;
+      margin: 10px;
+    }
+    .newletter_input {
+      height: 50px;
+      margin-top: 10px;
+    }
+    .bttn {
+      height: 50px;
+      margin: 10px;
+    }
   }
 }
-
