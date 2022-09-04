@@ -13,6 +13,7 @@ sass --watch scss/style.scss css/style.css
   padding: 0;
 }
 
+
 /* Acá se forma el background*/
 body {
   font-weight: normal;
@@ -26,6 +27,7 @@ body {
     #c850c0 46%,
     #ffcc70 100%
   );
+
 }
 
 .dark-color {
@@ -225,3 +227,5 @@ margin-top: 60px;
     }
   }
 }
+
+
