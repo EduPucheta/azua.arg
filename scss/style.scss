@@ -209,7 +209,6 @@ margin-top: 60px;
   .bttn {
     max-width: 200px;
     border: none;
-
   }
   @media (min-width: $breakpoint-tablet) {
     .newsletter_suscripcion {
@@ -224,6 +223,10 @@ margin-top: 60px;
     .bttn {
       height: 50px;
       margin: 10px;
+    }
+    .carousel2{
+      max-width: 60%; 
+      margin: auto;
     }
   }
 }

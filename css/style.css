@@ -321,6 +321,10 @@ h2 {
     height: 50px;
     margin: 10px;
   }
+  .newsletter .carousel2 {
+    max-width: 60%;
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Este es un extend*/
 .Footer__social {
   display: flex;
@@ -6,7 +7,60 @@
 }
 
 /*Este es hace lo mismo que el extend pero con mixin*/
-/* Este es un mapa para los botones*/
+.draw-border {
+  box-shadow: inset 0 0 0 4px white;
+  color: white;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+.draw-border:hover {
+  color: #e9c46a;
+}
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #e9c46a;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+.draw-border:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem "Roboto Slab", sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+}
+.btn:focus {
+  outline: 2px dotted #55d7dc;
+}
+
 .hero__container {
   background-color: none;
   color: none;
@@ -27,6 +81,7 @@
   margin: 2rem auto;
   padding: 2rem;
   border-radius: 5px;
+  min-height: 900px;
 }
 
 .form__label {
@@ -62,6 +117,7 @@ sass --watch scss/style.scss css/style.css
   padding: 0;
 }
 
+/* Acá se forma el background*/
 body {
   font-weight: normal;
   font-style: normal;
@@ -74,19 +130,18 @@ body {
   background-color: #264653;
 }
 
-.nav-link2 {
+nav .nav-link2 {
   color: white;
 }
-.nav-link2:hover {
+nav .nav-link2:hover {
   color: #e9c46a;
   transition: 0.4s;
 }
-
-.bttn-color {
+nav .bttn-color {
   background-color: #2a9d8f;
   border: none;
 }
-.bttn-color:hover {
+nav .bttn-color:hover {
   color: #e9c46a;
   background-color: #2a9d8f;
   transition: 0.4s;
@@ -97,18 +152,43 @@ body {
   padding: 24px;
 }
 
-.container,
-.my-5 {
-  background-color: rgb(241, 241, 241);
+.hero {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #264653;
+  margin: 20px;
+  color: white;
 }
-.container div,
-.my-5 div {
-  color: black;
+.hero h1,
+.hero p {
+  margin: 15px;
 }
-
-h1,
-.subtitulo {
-  color: black;
+.hero a {
+  margin-left: 30px;
+}
+.hero img {
+  height: 250px;
+  width: 250px;
+  margin: 40px;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 50px;
+  }
+  .hero .hero__text {
+    width: 800px;
+  }
+  .hero .hero__text h1,
+.hero .hero__text p {
+    margin: 40px;
+  }
+  .hero img {
+    height: 400px;
+    width: 400px;
+  }
 }
 
 h2 {
@@ -116,7 +196,12 @@ h2 {
   color: white;
 }
 
+.h2__index {
+  margin-top: 60px;
+}
+
 .Productos {
+  margin: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -125,11 +210,9 @@ h2 {
   text-align: center;
 }
 .Productos .Productos__child {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   margin: 20px;
   width: 100%;
-}
-.Productos p {
-  text-align: center;
 }
 
 .Contacto {
@@ -160,7 +243,7 @@ h2 {
   overflow: hidden;
 }
 
-/*la idea de este css es para implementar generico a todos los botones*/
+/*la idea de este css es para implementar generico a todos los botones */
 .bttn {
   display: block;
   background: #2a9d8f;
@@ -173,41 +256,75 @@ h2 {
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
+  border: 0px;
 }
-.bttnhover {
-  background: #e74c3c;
+.bttn:hover {
+  transition: 0.4s;
+  background-color: #e76f51;
 }
-
-/*La siguiente media query es para que la grilla solo se aplique en desktop
-  y para que se muestren los elementos en una sola columna en mobile*/
-@media screen and (min-width: 768px) {
-  .grilla {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 60px 25px 40px;
-    grid-row-gap: 15px;
-    grid-template-areas: "Footer__social Footer__social Footer__social" "newsletter_label newsletter_label button__newsletter" "newletter_input newletter_input button__newsletter";
-  }
-  .grilla .newletter_label {
-    grid-area: newsletter_label;
-  }
-  .grilla .newletter_input {
-    grid-area: newletter_input;
-  }
-  .grilla .button__newsletter {
-    grid-area: button__newsletter;
-  }
-  .grilla .Footer__social {
-    grid-area: Footer__social;
-  }
-}
-/* para espacear lo iconos de social (solo se usa ahi)*/
-.navYfooter .newsletter_label {
+.bttn a {
+  text-decoration: none;
+  border: none;
+  transition: 0.4s;
   color: white;
 }
-.navYfooter .button__newsletter {
-  font-size: medium;
-  margin-top: 40px;
+.bttn a:hover {
+  transition: 0.4s;
+  background-color: #e76f51;
+}
+
+/* para espacear lo iconos de social (solo se usa ahi)*/
+.Footer__social {
+  max-width: 800px;
+  margin: auto;
+}
+
+.encontrarnos {
+  margin: auto;
+  max-width: 800px;
+  padding: 10px;
+}
+.encontrarnos p {
+  color: white;
+}
+.encontrarnos iframe {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.newsletter {
+  margin: auto;
+  max-width: 800px;
+  padding: 10px;
+}
+.newsletter p {
+  color: white;
+}
+.newsletter .newsletter_label {
+  color: white;
+}
+.newsletter .bttn {
+  max-width: 200px;
+  border: none;
+}
+@media (min-width: 768px) {
+  .newsletter .newsletter_suscripcion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  .newsletter .newletter_input {
+    height: 50px;
+    margin-top: 10px;
+  }
+  .newsletter .bttn {
+    height: 50px;
+    margin: 10px;
+  }
+  .newsletter .carousel2 {
+    max-width: 60%;
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=style.cs.map */
