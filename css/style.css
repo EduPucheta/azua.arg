@@ -322,7 +322,7 @@ h2 {
     margin: 10px;
   }
   .newsletter .carousel2 {
-    max-width: 60%;
+    max-width: 75%;
     margin: auto;
   }
 }
