@@ -1,3 +1,45 @@
+.hero {
+  box-shadow: $shadow;
+  background-color: $charcoal;
+  margin: 20px;
+  color: $titulo-hero;
+  text-align: center;
+  h1,
+  p {
+    margin: 15px;
+  }
+  h1{
+    padding-top: 30px;
+  }
+  img {
+    height: 250px;
+    width: 250px;
+  }
+  @media (max-width: $breakpoint-tablet) {
+    img {
+      margin: 40px;
+    }
+  }
+  @media (min-width: $breakpoint-tablet) {
+    height: 500px;
+    @include flex(row);
+    justify-content: space-evenly;
+    padding: 50px;
+    .hero__text{
+      width: 800px;
+      h1,
+      p {
+        margin: 40px;
+      }
+    }
+    img {
+      height: 400px;
+      width: 400px;
+    }
+
+  }
+}
+
 .hero__container {
   background-color: none;
   color: none;

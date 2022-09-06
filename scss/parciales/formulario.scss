@@ -3,7 +3,10 @@
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 5px;
-    min-height: 900px;
+    min-height: 800px;
+    @media (min-width: $breakpoint-tablet) {
+      min-height: 900px;
+    }
   }
   
   .form__label {

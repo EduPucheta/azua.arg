@@ -59,41 +59,7 @@ nav {
   padding: 24px;
 }
 
-.hero {
-  box-shadow: $shadow;
-  background-color: $charcoal;
-  margin: 20px;
-  color: $titulo-hero;
-  h1,
-  p {
-    margin: 15px;
-  }
-  a {
-    margin-left: 30px;
-  }
-  img {
-    height: 250px;
-    width: 250px;
-    margin: 40px;
-  }
-  @media (min-width: $breakpoint-tablet) {
-    height: 500px;
-    @include flex(row);
-    justify-content: space-evenly;
-    padding: 50px;
-    .hero__text{
-      width: 800px;
-      h1,
-      p {
-        margin: 40px;
-      }
-    }
-    img {
-      height: 400px;
-      width: 400px;
-    }
-  }
-}
+
 
 h2 {
   text-align: center;
@@ -200,6 +166,9 @@ margin-top: 60px;
   margin: auto;
   max-width: 800px;
   padding: 10px;
+  .carousel2{
+    box-shadow: $shadow;
+  }
   p {
     color: $titulos;
   }
@@ -227,6 +196,7 @@ margin-top: 60px;
     .carousel2{
       max-width: 75%; 
       margin: auto;
+      box-shadow: $shadow;
     }
   }
 }
