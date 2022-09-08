@@ -61,6 +61,50 @@
   outline: 2px dotted #55d7dc;
 }
 
+.hero {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #264653;
+  margin: 20px;
+  color: white;
+  text-align: center;
+}
+.hero h1,
+.hero p {
+  margin: 15px;
+}
+.hero h1 {
+  padding-top: 30px;
+}
+.hero img {
+  height: 250px;
+  width: 250px;
+}
+@media (max-width: 768px) {
+  .hero img {
+    margin: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 50px;
+  }
+  .hero .hero__text {
+    width: 800px;
+  }
+  .hero .hero__text h1,
+.hero .hero__text p {
+    margin: 40px;
+  }
+  .hero img {
+    height: 400px;
+    width: 400px;
+  }
+}
+
 .hero__container {
   background-color: none;
   color: none;
@@ -81,7 +125,12 @@
   margin: 2rem auto;
   padding: 2rem;
   border-radius: 5px;
-  min-height: 900px;
+  min-height: 800px;
+}
+@media (min-width: 768px) {
+  .form {
+    min-height: 900px;
+  }
 }
 
 .form__label {
@@ -150,45 +199,6 @@ nav .bttn-color:hover {
 .navYfooter {
   background-color: #264653;
   padding: 24px;
-}
-
-.hero {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  background-color: #264653;
-  margin: 20px;
-  color: white;
-}
-.hero h1,
-.hero p {
-  margin: 15px;
-}
-.hero a {
-  margin-left: 30px;
-}
-.hero img {
-  height: 250px;
-  width: 250px;
-  margin: 40px;
-}
-@media (min-width: 768px) {
-  .hero {
-    height: 500px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 50px;
-  }
-  .hero .hero__text {
-    width: 800px;
-  }
-  .hero .hero__text h1,
-.hero .hero__text p {
-    margin: 40px;
-  }
-  .hero img {
-    height: 400px;
-    width: 400px;
-  }
 }
 
 h2 {
@@ -296,6 +306,9 @@ h2 {
   max-width: 800px;
   padding: 10px;
 }
+.newsletter .carousel2 {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 .newsletter p {
   color: white;
 }
@@ -324,6 +337,7 @@ h2 {
   .newsletter .carousel2 {
     max-width: 75%;
     margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
 }
 
