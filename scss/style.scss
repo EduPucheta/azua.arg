@@ -1,204 +1,84 @@
-@import "./base/variables";
-@import "./base/listas";
-@import "./parciales/hero.scss";
-@import "./parciales/formulario.scss";
-
 /* 
 npm init
 sass --watch scss/style.scss css/style.css 
 */
+
+@import "form_elements.scss";
+
 
 * {
   margin: 0;
   padding: 0;
 }
 
+html {
+  min-height: 100%;
+  body {
+    margin: 25px;
+    max-height: 70%;
+    font-family: 'Inter';
+    background-color: #F1F1FA;
+    // background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(97, 186, 255, 1) 0%, rgba(166, 239, 253, 1) 90.1%);
+    form {
+      display: flex;
+      flex-direction: column;
 
-/* Acá se forma el background*/
-body {
-  font-weight: normal;
-  font-style: normal;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #4158d0;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  );
-
-}
-
-.dark-color {
-  background-color: $navegacion;
-}
-
-nav {
-  .nav-link2 {
-    color: $colorsnav;
-    &:hover {
-      color: $colorhovers;
-      transition: $hover_trasition_Speed;
+      label {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 18px;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: -0.02em;
+        > *{
+          margin: 10px 0;
+        }
+      }
+      button {
+        box-sizing: border-box;
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 24px;
+        gap: 10px;
+        width: 100%;
+        height: 44px;
+        left: 16px;
+        top: 16px;
+        /* Primary */
+        background: #4535CC;
+        /* Primary */
+        border: 2px solid #4535CC;
+        border-radius: 10px;
+        color: #FFFFFF;
+        &:disabled{
+          box-sizing: border-box;
+          /* Auto layout */
+          /* Primary Dark */
+          background: #372AA3;
+          opacity: 0.4;
+          /* Primary Dark */
+          border: 2px solid #372AA3;
+          border-radius: 10px;
+        }
+      }
     }
-  }
-
-  .bttn-color {
-    background-color: $botones;
-    border: none;
-    &:hover {
-      color: $colorhovers;
-      background-color: $botones;
-      transition: $hover_trasition_Speed;
-    }
-  }
-}
-
-.navYfooter {
-  background-color: $navegacion;
-  padding: 24px;
-}
-
-
-
-h2 {
-  text-align: center;
-  color: white;
-
-}
-
-.h2__index{
-margin-top: 60px;
-}
-
-.Productos {
-  margin: 50px;
-  @include flex(row);
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  .Productos__child {
-    box-shadow: $shadow;
-    margin: 20px;
-    width: 100%;
-  }
-}
-
-.Contacto {
-  margin: 10px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 850px;
-  iframe {
-    width: 100%;
-  }
-}
-
-.contenidoIndex {
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  height: 300px;
-}
-
-.cards__bajada {
-  margin-left: auto;
-  margin-right: auto;
-  border: solid 1px white;
-  padding: 5px;
-  width: 370px;
-  height: 92px;
-  overflow: hidden;
-}
-
-/*la idea de este css es para implementar generico a todos los botones */
-.bttn {
-  display: block;
-  background: $botones;
-  width: 75%;
-  color: $botonestext;
-  padding: 0.5rem;
-  margin: 10px auto auto auto;
-  cursor: pointer;
-  transition: $hover_trasition_Speed;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 5px;
-  border: 0px;
-  &:hover {
-    transition: 0.4s;
-    background-color: $burnt-sienna;
-  }
-  a {
-    text-decoration: none;
-    border: none;
-    transition: $hover_trasition_Speed;
-    color: $botonestext;
-    &:hover {
-      transition: 0.4s;
-      background-color: $burnt-sienna;
-    }
-  }
-}
-
-/* para espacear lo iconos de social (solo se usa ahi)*/
-.Footer__social {
-  @extend %disposicion;
-  max-width: 800px;
-  margin: auto;
-}
-
-.encontrarnos {
-  margin: auto;
-  max-width: 800px;
-  padding: 10px;
-  p {
-    color: $titulos;
-  }
-  iframe {
-    box-shadow: $shadow;
-  }
-}
-
-.newsletter {
-  margin: auto;
-  max-width: 800px;
-  padding: 10px;
-  .carousel2{
-    box-shadow: $shadow;
-  }
-  p {
-    color: $titulos;
-  }
-  .newsletter_label {
-    color: $titulos;
-  }
-  .bttn {
-    max-width: 200px;
-    border: none;
-  }
-  @media (min-width: $breakpoint-tablet) {
-    .newsletter_suscripcion {
-      @include flex(row);
-      justify-content: space-between;
-      margin: 10px;
-    }
-    .newletter_input {
-      height: 50px;
+    #resultados{
       margin-top: 10px;
-    }
-    .bttn {
-      height: 50px;
-      margin: 10px;
-    }
-    .carousel2{
-      max-width: 75%; 
-      margin: auto;
-      box-shadow: $shadow;
+      #mensajederesultado3{
+        color: green;
+      }  
+      #mensajederesultado4{
+        color: red;
+      }  
     }
   }
 }
-
-
